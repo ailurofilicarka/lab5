@@ -137,3 +137,35 @@
 09:39:04.953 INFO  - Refreshed build settings on project hello_world 
 10:33:44.745 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
 10:36:10.473 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+09:12:23.777 INFO  - Restoring local repository preferences: 
+		 D:\work\lprs2\2013_2014\Resene_vezbe\lab56\basic_system 
+09:12:23.855 ERROR - Unable to read in MSS file C:\Temp\133\LAB5\lab5\SDK\SDK_Workspace\hello_world_bsp\system.mss. 
+09:12:27.052 ERROR - Unable to read in MSS file C:\Temp\133\LAB5\lab5\SDK\SDK_Workspace\hello_world_bsp\system.mss. 
+09:12:27.068 ERROR - Unable to read in MSS file C:\Temp\133\LAB5\lab5\SDK\SDK_Workspace\hello_world_bsp\system.mss. 
+09:12:27.411 WARN  - Unable to determine location of documentation for OS . 
+09:12:27.427 ERROR - Unable to read in MSS file C:\Temp\133\LAB5\lab5\SDK\SDK_Workspace\hello_world_bsp\system.mss. 
+09:12:27.427 ERROR - Unable to read in MSS file C:\Temp\133\LAB5\lab5\SDK\SDK_Workspace\hello_world_bsp\system.mss. 
+09:12:45.415 ERROR - Unable to read in MSS file C:\Temp\133\LAB5\lab5\SDK\SDK_Workspace\hello_world_bsp\system.mss. 
+09:23:05.874 INFO  - FPGA configured successfully with bitstream "C:/Temp/133/LAB5/lab5/SDK/SDK_Workspace/basic_system_hw_platform/download.bit" 
+09:27:26.625 INFO  - Time out for XMD transaction is 60000
+If you want to increase the timeout value, goto Windows-> Preferences -> Xilinx SDK -> XMD Startup 
+09:27:26.625 ERROR - Timeout occured while waiting to get reply for command "set_cur_target 0" 
+09:27:26.735 ERROR - Unexpected error while launching program. java.lang.RuntimeException: No Active System
+
+	at com.xilinx.sdk.targetmanager.internal.TM.setResetOnRun(Unknown Source)
+	at com.xilinx.sdk.debug.core.internal.AppRunner.run(Unknown Source)
+
+10:06:00.497 ERROR - Unexpected error while launching program. java.lang.RuntimeException: Invalid Target ID
+    Target '0' Does NOT exist in the Current System
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.continueExecution(Unknown Source)
+	at com.xilinx.sdk.debug.core.internal.AppRunner.run(Unknown Source)
+
+10:21:49.675 INFO  - Time out for XMD transaction is 60000
+If you want to increase the timeout value, goto Windows-> Preferences -> Xilinx SDK -> XMD Startup 
+10:21:49.675 ERROR - Timeout occured while waiting to get reply for command "xconnect mb mdm  " 
+10:21:49.675 ERROR - Unexpected error while launching program. com.xilinx.sdk.targetmanager.TMException: 
+	at com.xilinx.sdk.targetmanager.internal.TM.connectToProcessor(Unknown Source)
+	at com.xilinx.sdk.debug.core.internal.AppRunner.run(Unknown Source)
+
