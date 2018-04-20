@@ -169,3 +169,78 @@ If you want to increase the timeout value, goto Windows-> Preferences -> Xilinx 
 	at com.xilinx.sdk.targetmanager.internal.TM.connectToProcessor(Unknown Source)
 	at com.xilinx.sdk.debug.core.internal.AppRunner.run(Unknown Source)
 
+10:33:01.259 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+09:10:10.298 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+09:10:38.035 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+Failed to Scan JTAG Chain
+    Unknown Error
+ 
+09:11:54.547 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+Failed to Scan JTAG Chain
+    Unknown Error
+ 
+09:11:58.370 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+Failed to Scan JTAG Chain
+    Unknown Error
+ 
+09:12:15.733 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+Failed to Scan JTAG Chain
+    Unknown Error
+ 
+09:14:21.941 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+Failed to Scan JTAG Chain
+    Unknown Error
+ 
+09:17:20.052 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+09:17:32.936 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+09:17:53.788 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+10:03:36.730 INFO  - FPGA configured successfully with bitstream "C:/Temp/133/LAB5/lab5/SDK/SDK_Workspace/basic_system_hw_platform/download.bit" 
+10:07:20.042 INFO  - FPGA configured successfully with bitstream "C:/Temp/133/LAB5/lab5/SDK/SDK_Workspace/basic_system_hw_platform/download.bit" 
+10:07:52.515 INFO  - FPGA configured successfully with bitstream "C:/Temp/133/LAB5/lab5/SDK/SDK_Workspace/basic_system_hw_platform/download.bit" 
+10:08:17.323 INFO  - FPGA configured successfully with bitstream "C:/Temp/133/LAB5/lab5/SDK/SDK_Workspace/basic_system_hw_platform/download.bit" 
+10:08:36.020 INFO  - FPGA configured successfully with bitstream "C:/Temp/133/LAB5/lab5/SDK/SDK_Workspace/basic_system_hw_platform/download.bit" 
+10:10:28.248 INFO  - FPGA configured successfully with bitstream "C:/Temp/133/LAB5/lab5/SDK/SDK_Workspace/basic_system_hw_platform/download.bit" 
+10:11:15.277 INFO  - FPGA configured successfully with bitstream "C:/Temp/133/LAB5/lab5/SDK/SDK_Workspace/basic_system_hw_platform/download.bit" 
+10:12:15.280 INFO  - FPGA configured successfully with bitstream "C:/Temp/133/LAB5/lab5/SDK/SDK_Workspace/basic_system_hw_platform/download.bit" 
+10:12:37.700 INFO  - FPGA configured successfully with bitstream "C:/Temp/133/LAB5/lab5/SDK/SDK_Workspace/basic_system_hw_platform/download.bit" 
+10:12:59.889 INFO  - FPGA configured successfully with bitstream "C:/Temp/133/LAB5/lab5/SDK/SDK_Workspace/basic_system_hw_platform/download.bit" 
+10:13:23.621 INFO  - FPGA configured successfully with bitstream "C:/Temp/133/LAB5/lab5/SDK/SDK_Workspace/basic_system_hw_platform/download.bit" 
+10:13:49.342 INFO  - FPGA configured successfully with bitstream "C:/Temp/133/LAB5/lab5/SDK/SDK_Workspace/basic_system_hw_platform/download.bit" 
+10:15:01.528 INFO  - FPGA configured successfully with bitstream "C:/Temp/133/LAB5/lab5/SDK/SDK_Workspace/basic_system_hw_platform/download.bit" 
+10:15:42.106 INFO  - FPGA configured successfully with bitstream "C:/Temp/133/LAB5/lab5/SDK/SDK_Workspace/basic_system_hw_platform/download.bit" 
+10:16:51.222 INFO  - FPGA configured successfully with bitstream "C:/Temp/133/LAB5/lab5/SDK/SDK_Workspace/basic_system_hw_platform/download.bit" 
+10:18:11.161 INFO  - FPGA configured successfully with bitstream "C:/Temp/133/LAB5/lab5/SDK/SDK_Workspace/basic_system_hw_platform/download.bit" 
+10:20:01.200 INFO  - FPGA configured successfully with bitstream "C:/Temp/133/LAB5/lab5/SDK/SDK_Workspace/basic_system_hw_platform/download.bit" 
+10:21:07.622 INFO  - FPGA configured successfully with bitstream "C:/Temp/133/LAB5/lab5/SDK/SDK_Workspace/basic_system_hw_platform/download.bit" 
+10:22:05.446 INFO  - FPGA configured successfully with bitstream "C:/Temp/133/LAB5/lab5/SDK/SDK_Workspace/basic_system_hw_platform/download.bit" 
+10:22:21.623 INFO  - FPGA configured successfully with bitstream "C:/Temp/133/LAB5/lab5/SDK/SDK_Workspace/basic_system_hw_platform/download.bit" 
+10:26:41.561 ERROR - Unable to disconnect from existing targets java.lang.NullPointerException
+	at com.xilinx.sdk.targetmanager.internal.json.XMDJSONProcess.issueCommand(Unknown Source)
+	at com.xilinx.sdk.targetmanager.internal.TM.disconnectTarget(Unknown Source)
+
+10:26:41.561 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
