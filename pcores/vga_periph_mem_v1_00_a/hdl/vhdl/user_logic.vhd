@@ -128,6 +128,9 @@ entity user_logic is
     red_o          : out std_logic_vector(7 downto 0);
     green_o        : out std_logic_vector(7 downto 0);
     blue_o         : out std_logic_vector(7 downto 0);
+	 
+	 irq						: 	out std_logic;
+	
     -- ADD USER PORTS ABOVE THIS LINE ------------------
 
     -- DO NOT EDIT BELOW THIS LINE ---------------------
@@ -191,6 +194,8 @@ architecture IMP of user_logic is
   constant REG_ADDR_04       : std_logic_vector(GRAPH_MEM_ADDR_WIDTH-1 downto 0) := conv_std_logic_vector( 4, GRAPH_MEM_ADDR_WIDTH);
   constant REG_ADDR_05       : std_logic_vector(GRAPH_MEM_ADDR_WIDTH-1 downto 0) := conv_std_logic_vector( 5, GRAPH_MEM_ADDR_WIDTH);
   constant REG_ADDR_06       : std_logic_vector(GRAPH_MEM_ADDR_WIDTH-1 downto 0) := conv_std_logic_vector( 6, GRAPH_MEM_ADDR_WIDTH);
+  constant REG_ADDR_07       : std_logic_vector(GRAPH_MEM_ADDR_WIDTH-1 downto 0) := conv_std_logic_vector( 7, GRAPH_MEM_ADDR_WIDTH);
+  constant REG_ADDR_08       : std_logic_vector(GRAPH_MEM_ADDR_WIDTH-1 downto 0) := conv_std_logic_vector( 8, GRAPH_MEM_ADDR_WIDTH);
   
   constant update_period     : std_logic_vector(31 downto 0) := conv_std_logic_vector(1, 32);
   
@@ -201,8 +206,6 @@ architecture IMP of user_logic is
   -- 01 - text_mem
   -- 10 - graphics mem
   
-
- 
   --USER signal declarations added here, as needed for user logic
     component vga_top is 
     generic (
@@ -254,7 +257,12 @@ architecture IMP of user_logic is
       red_o               : out std_logic_vector(7 downto 0);
       green_o             : out std_logic_vector(7 downto 0);
       blue_o              : out std_logic_vector(7 downto 0)
-    );
+		
+		v_sync_counter_tc		:	in std_logic(10 downto 0);
+		irq						:	out std_logic;
+		en							: 	in std_logic;
+	 
+	 );
   end component;
   
   component ODDR2
@@ -321,6 +329,10 @@ architecture IMP of user_logic is
   signal unit_sel            : std_logic_vector(1 downto 0);
   signal unit_addr           : std_logic_vector(GRAPH_MEM_ADDR_WIDTH-1 downto 0);--15+6+1
   signal reg_we              : std_logic;
+  
+  signal v_sync_counter_tc_s	:	std_logic_vector(31 downto 0);
+  signal irq_s						: 	std_logic;
+  signal en_s						: 	std_logic;
 
 begin
   --USER logic implementation added here
@@ -359,11 +371,25 @@ begin
             when REG_ADDR_04 => foreground_color <= Bus2IP_Data(23 downto 0);
             when REG_ADDR_05 => background_color <= Bus2IP_Data(23 downto 0);
             when REG_ADDR_06 => frame_color      <= Bus2IP_Data(23 downto 0);
-            when others => null;
+            when REG_ADDR_07 => v_sync_counter_tc_s <= Bus2IP_Data(31 downto 0);
+            when REG_ADDR_08 => en_s      <= Bus2IP_Data(0);
+            
+				
+				when others => null;
           end case;
         end if;
     end if;
   end process;
+  
+  irq <= irq_s;
+  
+	process(dir_pixel_row, v_sync_counter_tc_s, en_s) begin
+		if(dir_pixel_row = v_sync_counter_tc_s) then 
+			irq_s <= '1' and en_s;
+		else
+			irq_s <= '0' and en_s;
+		end if;
+	end process;
     
 --  direct_mode      <= '0';
 --  display_mode     <= "01";
@@ -518,7 +544,8 @@ begin
     sync_o             => sync_o,
     red_o              => red_o,
     green_o            => green_o,
-    blue_o             => blue_o     
+    blue_o             => blue_o,
+
   );
   vga_vsync_o <= vga_vsync_s;
   
